@@ -5,7 +5,22 @@ class Main {
         // création d'un LFSR
         LFSR lfsr = new LFSR();
         // affichage de son état interne
+
+        //Test 1.6
+        for (int i =0; i<20; i++) {
+            System.out.println(lfsr.nextInt());
+        }
+        //Test 1.3
         System.out.println(lfsr);
+        lfsr.decalerRegistre();
+        System.out.println(lfsr);
+        lfsr.decalerRegistre();
+        System.out.println(lfsr);
+        lfsr.decalerRegistre();
+        System.out.println(lfsr);
+        lfsr.decalerRegistre();
+        System.out.println(lfsr);
+
 
         // Partie II: cryptographie
         String msg = "CECI EST UN MESSAGE SECRET";
@@ -26,7 +41,7 @@ class Main {
         char[] entree = message.toCharArray();
         char[] sortie = new char[entree.length];
         for (int i=0;i<entree.length; i++) {
-            sortie[i] = sortie[i] = (char)(entree[i] + 3); // decaler de 3 positions
+            sortie[i] = (char)(entree[i] + 3); // decaler de 3 positions
         }
         return new String(sortie);
     }

@@ -31,7 +31,31 @@ public class LFSR {
     }
 
     public void decalerRegistre() {
-
+        //calculer valeur du nouveau bit genere
+       int bitGenerer = xor(registre[0], registre[2]);
+       //decaler tableau registre -1
+        for(int i = 0; i < registre.length -1; i++) {
+            registre[i] = registre[i+1];
+        }
+        registre[registre.length - 1] = bitGenerer;
     }
 
+    public int nextBit() {
+        decalerRegistre();
+        return registre[registre.length-1];
+    }
+
+    public int nextInt() {
+
+        int decimal = 0;
+        int bitGen;
+
+        for (int i =0; i < 5; i++) {
+            bitGen = nextBit();
+            decimal += bitGen * PUISSANCES2[i];
+
+
+        }
+        return decimal;
+    }
 }
