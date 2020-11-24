@@ -43,7 +43,7 @@ class Main {
         char[] entree = message.toCharArray();
         char[] sortie = new char[entree.length];
         for (int i=0;i<entree.length; i++) {
-            sortie[i] = (char)(entree[i] + lfsr.nextInt()); // decaler de 3 positions
+            sortie[i] = (char)(entree[i] + lfsr.nextInt());
         }
         return new String(sortie);
     }
@@ -55,7 +55,7 @@ class Main {
         char[] entree = cypher.toCharArray();
         char[] sortie = new char[entree.length];
         for (int i=0;i<entree.length; i++) {
-            // décalage inverse
+
             sortie[i] = (char)(entree[i] - lfsr.nextInt());
         }
         return new String(sortie);
