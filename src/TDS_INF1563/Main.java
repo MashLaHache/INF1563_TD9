@@ -7,9 +7,7 @@ class Main {
         // affichage de son état interne
 
         //Test 1.6
-        for (int i =0; i<20; i++) {
-            System.out.println(lfsr.nextInt());
-        }
+        lfsr.tester(20);
         //Test 1.3
         System.out.println(lfsr);
         lfsr.decalerRegistre();

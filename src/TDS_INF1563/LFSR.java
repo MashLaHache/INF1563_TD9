@@ -53,9 +53,13 @@ public class LFSR {
         for (int i =0; i < 5; i++) {
             bitGen = nextBit();
             decimal += bitGen * PUISSANCES2[i];
-
-
         }
         return decimal;
+    }
+
+    public void tester(int nombreDeFois){
+        for (int i =0; i<nombreDeFois; i++) {
+            System.out.println(nextInt());
+        }
     }
 }
