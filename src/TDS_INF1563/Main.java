@@ -38,21 +38,25 @@ class Main {
     //"Cesar cypher": on décale tous les caractères d'un nombre fixe de positions
     public static String encoder(String message) {
 
+        LFSR lfsr = new LFSR();
+
         char[] entree = message.toCharArray();
         char[] sortie = new char[entree.length];
         for (int i=0;i<entree.length; i++) {
-            sortie[i] = (char)(entree[i] + 3); // decaler de 3 positions
+            sortie[i] = (char)(entree[i] + lfsr.nextInt()); // decaler de 3 positions
         }
         return new String(sortie);
     }
 
     // 2.2
     public static String decoder(String cypher) {
+        LFSR lfsr = new LFSR();
+
         char[] entree = cypher.toCharArray();
         char[] sortie = new char[entree.length];
         for (int i=0;i<entree.length; i++) {
             // décalage inverse
-            sortie[i] = (char)(entree[i] - 3);
+            sortie[i] = (char)(entree[i] - lfsr.nextInt());
         }
         return new String(sortie);
     }
