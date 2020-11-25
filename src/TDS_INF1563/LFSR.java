@@ -46,13 +46,10 @@ public class LFSR {
     }
 
     public int nextInt() {
-
         int decimal = 0;
-        int bitGen;
 
         for (int i =0; i < 5; i++) {
-            bitGen = nextBit();
-            decimal += bitGen * PUISSANCES2[i];
+            decimal += nextBit() * PUISSANCES2[i];
         }
         return decimal;
     }
